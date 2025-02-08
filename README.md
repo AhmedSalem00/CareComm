@@ -47,8 +47,8 @@ The app uses the BLoC pattern to manage the state.
 FavoritesCubit
 The FavoritesCubit is responsible for loading, adding, and removing products from the favorites list. It communicates with SharedPreferences to persist the data.
 
-FavoritesState
-The states that FavoritesCubit can emit include:
+ProductState
+The states that ProductCubit can emit include:
 
 ProductInitial: The initial state before data is loaded.
 ProductLoaded: The state when the data has been successfully loaded.
@@ -64,7 +64,7 @@ shared_preferences: Used to save and load favorite products.
 flutter: The core framework for building the app.
 
 
-#Responsiveness
+##Responsiveness
 This application is fully responsive and provides an optimal experience across various devices, including:
 Mobile: Seamlessly adapts to smaller screen sizes for easy navigation and usability.
 Tablet: Provides a great layout and user interface on medium-sized screens.
