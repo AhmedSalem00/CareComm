@@ -6,7 +6,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-// Manually create a mock class for SharedPreferences
 class MockSharedPreferences extends Mock implements SharedPreferences {}
 
 void main() {
@@ -15,7 +14,7 @@ void main() {
 
   setUp(() {
     mockSharedPreferences = MockSharedPreferences();
-    SharedPreferences.setMockInitialValues({}); // Important for tests
+    SharedPreferences.setMockInitialValues({});
     cubit = ProductCubit();
   });
 
@@ -63,14 +62,13 @@ void main() {
     test('adds a product to favorites and saves to SharedPreferences', () async {
       final product = Product(id: 1, title: 'Test Product', price: 10.0);
       when(SharedPreferences.getInstance()).thenAnswer((_) async => mockSharedPreferences);
-      when(mockSharedPreferences.setString('favorites', any??'')).thenAnswer((_) async => true); // Mock successful save
-
+      when(mockSharedPreferences.setString('favorites', any??'')).thenAnswer((_) async => true);
       await cubit.addFavorite(product);
 
       expect(cubit.state, isA<FavoritesLoaded>());
       expect((cubit.state as FavoritesLoaded).favorites.length, 1);
       expect((cubit.state as FavoritesLoaded).favorites[0].id, 1);
-      verify(mockSharedPreferences.setString('favorites', any??'')).called(1); // Verify save was called
+      verify(mockSharedPreferences.setString('favorites', any??'')).called(1);
     });
 
     test('emits FavoritesError when adding to favorites fails', () async {
@@ -95,7 +93,7 @@ void main() {
       when(SharedPreferences.getInstance()).thenAnswer((_) async => mockSharedPreferences);
       when(mockSharedPreferences.setString('favorites', any??'')).thenAnswer((_) async => true);
 
-      await cubit.loadFavorites(); // Load initial favorites
+      await cubit.loadFavorites();
       await cubit.removeFavorite(1);
 
       expect(cubit.state, isA<FavoritesLoaded>());
