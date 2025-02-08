@@ -58,11 +58,11 @@ This screen uses BlocBuilder to listen for changes in the ProductCubit state. It
 
 ## Dependencies
 Here are the main dependencies used in this project:
--HTTP: A composable, Future-based library for making HTTP requests.
--flutter_bloc: State management with the BLoC pattern.
--shared_preferences: Used to save and load favorite products.
--cached_network_image: show images from the internet and keep them in the cache directory.
--mockito: A mock framework inspired by Mockito with APIs for Fakes, Mocks, behavior verification, and stubbing.
+- HTTP: A composable, Future-based library for making HTTP requests.
+- flutter_bloc: State management with the BLoC pattern.
+- shared_preferences: Used to save and load favorite products.
+- cached_network_image: show images from the internet and keep them in the cache directory.
+- mockito: A mock framework inspired by Mockito with APIs for Fakes, Mocks, behavior verification, and stubbing.
 flutter: The core framework for building the app.
 
 
