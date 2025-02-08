@@ -44,8 +44,8 @@ lib/features/product/data/models/product_model.dart: Defines the model for the P
 BLoC Overview
 The app uses the BLoC pattern to manage the state.
 
-FavoritesCubit
-The FavoritesCubit is responsible for loading, adding, and removing products from the favorites list. It communicates with SharedPreferences to persist the data.
+ProductCubit
+The ProductCubit is responsible for loading, adding, and removing products from the favorites list. It communicates with SharedPreferences to persist the data.
 
 ProductState
 The states that ProductCubit can emit include:
@@ -56,7 +56,7 @@ ProductError: The state in which an error occurs while loading or modifying favo
 ProductScreen
 This screen uses BlocBuilder to listen for changes in the ProductCubit state. It updates the UI to display the list of favorite products or an error message.
 
-Dependencies
+## Dependencies
 Here are the main dependencies used in this project:
 
 flutter_bloc: State management with the BLoC pattern.
@@ -64,7 +64,7 @@ shared_preferences: Used to save and load favorite products.
 flutter: The core framework for building the app.
 
 
-##Responsiveness
+## Responsiveness
 This application is fully responsive and provides an optimal experience across various devices, including:
 Mobile: Seamlessly adapts to smaller screen sizes for easy navigation and usability.
 Tablet: Provides a great layout and user interface on medium-sized screens.
