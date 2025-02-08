@@ -1,23 +1,19 @@
 import 'package:carecomm/features/product/data/models/product_model.dart';
 
-abstract class FavoritesState {}
+abstract class ProductState {}
 
-class FavoritesInitial extends FavoritesState {}
+class FavoritesInitial extends ProductState {}
 
-class FavoritesLoaded extends FavoritesState {
+class FavoritesLoaded extends ProductState {
   final List<Product> favorites;
 
   FavoritesLoaded(this.favorites);
 }
 
-class FavoritesError extends FavoritesState {
+class FavoritesError extends ProductState {
   final String message;
 
   FavoritesError(this.message);
 }
 
-class AppThemeChanged extends FavoritesState {
-  final bool isDark;
 
-  AppThemeChanged(this.isDark);
-}

@@ -8,13 +8,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'data/models/product_model.dart';
 
-
 class ProductListScreen extends StatelessWidget {
   const ProductListScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    context.read<FavoritesCubit>().loadFavorites();
+    context.read<ProductCubit>().loadFavorites();
     return Scaffold(
       appBar: AppBar(
         title: Text('Products'),
@@ -48,11 +47,11 @@ class ProductListScreen extends StatelessWidget {
             itemBuilder: (context, index) {
               Product product = products[index];
 
-              final favoritesState = context.watch<FavoritesCubit>().state;
+              final ProductState = context.watch<ProductCubit>().state;
               bool isFavorite = false;
 
-              if (favoritesState is FavoritesLoaded) {
-                isFavorite = favoritesState.favorites.contains(product);
+              if (ProductState is FavoritesLoaded) {
+                isFavorite = ProductState.favorites.contains(product);
               }
 
               return GestureDetector(
@@ -103,7 +102,7 @@ class ProductListScreen extends StatelessWidget {
                         child: CircleAvatar(
                           child: IconButton(
                             onPressed: () {
-                              context.read<FavoritesCubit>().addFavorite(product);
+                              context.read<ProductCubit>().addFavorite(product);
                             },
                             icon: Icon(
                               isFavorite ? Icons.favorite : Icons.favorite_border,

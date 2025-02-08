@@ -11,7 +11,7 @@ class FavoritesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Favorites')),
-      body: BlocBuilder<FavoritesCubit, FavoritesState>(
+      body: BlocBuilder<ProductCubit, ProductState>(
         builder: (context, state) {
           if (state is FavoritesInitial) {
             return Center(child: CircularProgressIndicator());
@@ -32,7 +32,7 @@ class FavoritesScreen extends StatelessWidget {
                   trailing: IconButton(
                     icon: Icon(Icons.remove_circle, color: Colors.red),
                     onPressed: () {
-                      context.read<FavoritesCubit>().removeFavorite(favorites[index].id!);
+                      context.read<ProductCubit>().removeFavorite(favorites[index].id!);
                     },
                   ),
                 );
