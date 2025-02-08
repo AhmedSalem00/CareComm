@@ -36,11 +36,11 @@ To run this project locally, you'll need:
    Directory Structure
 Here’s a breakdown of the key parts of the project:
 
-lib/core: Contains helper functions and API services.
-lib/features/product: Contains the BLoC cubit for managing product state, including ProductCubit and ProductState.
-lib/features/product_details: Contains the screen where product details are displayed.
-lib/features/product/cubit/state.dart: Defines the various states related to the product (e.g., loading, loaded, error).
-lib/features/product/data/models/product_model.dart: Defines the model for the Product.
+## lib/core: Contains helper functions and API services.
+## lib/features/product: Contains the BLoC cubit for managing product state, including ProductCubit and ProductState.
+## lib/features/product_details: Contains the screen where product details are displayed.
+## lib/features/product/cubit/state.dart: Defines the various states related to the product (e.g., loading, loaded, error).
+## lib/features/product/data/models/product_model.dart: Defines the model for the Product.
 BLoC Overview
 The app uses the BLoC pattern to manage the state.
 
@@ -48,7 +48,7 @@ ProductCubit
 The ProductCubit is responsible for loading, adding, and removing products from the favorites list. It communicates with SharedPreferences to persist the data.
 
 ProductState
-The states that ProductCubit can emit include:
+The states that ProductState can emit include:
 
 ProductInitial: The initial state before data is loaded.
 ProductLoaded: The state when the data has been successfully loaded.
